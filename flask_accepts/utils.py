@@ -1,6 +1,7 @@
 from typing import Optional, Type, Union
 from flask_restx import fields as fr
 from marshmallow import fields as ma
+from marshmallow_mongoengine import fields as me
 from marshmallow.schema import Schema, SchemaMeta
 import uuid
 
@@ -116,6 +117,7 @@ type_map = {
     ma.Mapping: fr.Raw,
     ma.NaiveDateTime: fr.DateTime,
     ma.Number: fr.Float,
+    me.ObjectId: fr.String,
     ma.Pluck: fr.Raw,
     ma.Raw: fr.Raw,
     ma.Str: fr.String,
